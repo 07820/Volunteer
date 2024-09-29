@@ -1,0 +1,4 @@
+The software, named "Volunteers," is a volunteer service platform designed to provide convenient volunteer matching for community organizations, charities, non-profit entities, and university students in the UK. Its main features include intelligent matching between volunteers and activities, activity posting and management, and forum interactions. Through the integration of AI models and Google Maps API, the platform helps organizers efficiently find suitable volunteers, while offering students opportunities to participate in volunteer activities and interact on the platform. The system is developed using the .NET framework, with backend logic implemented in C#, and data storage hosted on Alibaba Cloud servers.
+
+
+![image](https://github.com/user-attachments/assets/f02da165-a471-4516-835b-995fcd250e41)
