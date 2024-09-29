@@ -1,0 +1,386 @@
+﻿<Window
+    x:Class="Form.Page.Post.PostView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+    xmlns:control="clr-namespace:Form.Control"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:Form.Converter"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:s="https://github.com/canton7/Stylet"
+    Width="1200"
+    Height="700"
+    Closed="{s:Action Close}"
+    FontFamily="{StaticResource FontN}"
+    Loaded="{s:Action Load}"
+    Style="{DynamicResource StandWindowStyle}"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <local:ByteArrayToImageConverter x:Key="byteArrayToImageConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--  顶部标题栏  -->
+        <Border Grid.ColumnSpan="8">
+            <Grid>
+                <StackPanel
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal"
+                    TextBlock.Foreground="{DynamicResource IconBrush}">
+                    <TextBlock
+                        Margin="0,0,26,0"
+                        VerticalAlignment="Center"
+                        FontFamily="{DynamicResource Iconfont}"
+                        FontSize="20"
+                        MouseDown="Min"
+                        Text="&#xe680;" />
+                    <TextBlock
+                        Margin="0,0,24,0"
+                        VerticalAlignment="Center"
+                        FontFamily="{DynamicResource Iconfont}"
+                        FontSize="17"
+                        MouseDown="Max"
+                        Text="&#xe67f;" />
+                    <TextBlock
+                        Margin="0,0,20,0"
+                        VerticalAlignment="Center"
+                        FontFamily="{DynamicResource Iconfont}"
+                        FontSize="22"
+                        MouseDown="{s:Action Close}"
+                        Text="&#xe682;" />
+                </StackPanel>
+                <StackPanel
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        Margin="14,0,26,0"
+                        VerticalAlignment="Center"
+                        FontSize="19"
+                        FontWeight="Bold"
+                        Foreground="Black"
+                        Text="{Binding Post.Title}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border x:Name="BrdMain" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+                    Grid.Row="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Image
+                        Width="40"
+                        Height="40"
+                        Margin="17,2,0,0"
+                        VerticalAlignment="Center"
+                        Source="{Binding Post.Avatar, Converter={StaticResource byteArrayToImageConverter},ConverterParameter='Avatar'}"
+                        Stretch="Fill" />
+                    <StackPanel
+                        Grid.Row="0"
+                        Margin="7,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Vertical">
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Margin="3,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Foreground="#75849a"
+                            Text="{Binding Post.NickName}">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Opacity" Value="1" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Opacity" Value="0.6" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Margin="3,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Foreground="#75849a"
+                            Text="{Binding Post.CreateTime, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Opacity" Value="1" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Opacity" Value="0.6" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Path
+                        Width="14"
+                        Height="14"
+                        Margin="0,0,5,0"
+                        Data="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"
+                        MouseDown="{s:Action Like}"
+                        Stretch="Uniform"
+                        StrokeLineJoin="miter"
+                        StrokeStartLineCap="flat"
+                        UseLayoutRounding="False">
+                        <Path.Style>
+                            <Style TargetType="Path">
+                                <Setter Property="Opacity" Value="1" />
+                                <Setter Property="Fill" Value="#75849a" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="0.6" />
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding Post.IsLike}" Value="1">
+                                        <Setter Property="Fill" Value="#1772f6" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Path.Style>
+                    </Path>
+                    <TextBlock
+                        Margin="0,0,10,0"
+                        FontSize="14"
+                        MouseDown="{s:Action Like}"
+                        Text="{Binding Post.Likes}">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Opacity" Value="1" />
+                                <Setter Property="Foreground" Value="#75849a" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="0.6" />
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding Post.IsLike}" Value="1">
+                                        <Setter Property="Foreground" Value="#1772f6" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <Path
+                        Width="14"
+                        Height="14"
+                        Margin="20,0,5,0"
+                        Data="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z"
+                        Fill="#75849a"
+                        Stretch="Uniform"
+                        StrokeLineJoin="miter"
+                        StrokeStartLineCap="flat"
+                        UseLayoutRounding="False">
+                        <Path.Style>
+                            <Style TargetType="Path">
+                                <Setter Property="Opacity" Value="1" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="0.6" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Path.Style>
+                    </Path>
+                    <TextBlock
+                        Margin="0,0,30,0"
+                        FontSize="14"
+                        Foreground="#75849a"
+                        Text="{Binding Post.CommentCount}">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Opacity" Value="1" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="0.6" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
+                <TextBox
+                    Grid.Row="1"
+                    Margin="25,5,25,10"
+                    VerticalContentAlignment="Top"
+                    FontSize="14"
+                    IsReadOnly="True"
+                    Text="{Binding Post.Content}"
+                    TextWrapping="Wrap" />
+                <!--  评论区  -->
+                <ItemsControl
+                    Name="itemsControl"
+                    Grid.Row="2"
+                    Grid.RowSpan="2"
+                    ItemsSource="{Binding CommentItems}">
+                    <ItemsControl.Template>
+                        <ControlTemplate TargetType="{x:Type ItemsControl}">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Margin="0,0,0,60" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Margin="10,5,10,0"
+                                BorderBrush="#f8f8fa"
+                                BorderThickness="0,0,0,2">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <StackPanel
+                                        Grid.Row="0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+
+                                       
+
+
+
+                                        <Image
+                                            Width="40"
+                                            Height="40"
+                                            Margin="17,2,0,0"
+                                            VerticalAlignment="Center"
+                                            Source="{Binding Avatar, Converter={StaticResource byteArrayToImageConverter},ConverterParameter='Avatar'}"
+                                            Stretch="Fill" />
+                                        <StackPanel
+                                            Grid.Row="0"
+                                            Margin="7,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Orientation="Vertical">
+
+                                            <TextBlock
+                                                Grid.Row="1"
+                                                Margin="3,0,0,0"
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                Foreground="#75849a"
+                                                Text="{Binding AuthorName}">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Opacity" Value="1" />
+                                                        <Style.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Opacity" Value="0.6" />
+                                                            </Trigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <TextBlock
+                                                Grid.Row="1"
+                                                Margin="3,0,0,0"
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                Foreground="#75849a"
+                                                Text="{Binding CreatedTime, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Opacity" Value="1" />
+                                                        <Style.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Opacity" Value="0.6" />
+                                                            </Trigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Margin="65,0,20,10"
+                                        FontSize="13"
+                                        Text="{Binding Content}"
+                                        TextTrimming="CharacterEllipsis"
+                                        TextWrapping="Wrap" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <hc:ElementGroup Grid.Row="3" Margin="100,0,100,0">
+                    <hc:ElementGroup.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </hc:ElementGroup.ItemsPanel>
+                    <TextBox
+                        HorizontalAlignment="Stretch"
+                        DockPanel.Dock="Left"
+                        Text="{Binding Msg}" />
+                    <Button
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        Command="{s:Action Comment}"
+                        Content="Comment"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource ButtonPrimary}" />
+                </hc:ElementGroup>
+                <Grid Grid.RowSpan="4" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image
+                        Margin="0,20,30,0"
+                        VerticalAlignment="Center"
+                        Source="{Binding Post.Picture, Converter={StaticResource byteArrayToImageConverter}}"
+                        Stretch="Fill" />
+                    <MediaElement
+                        Name="MV"
+                        Grid.Row="2"
+                        Margin="0,5,10,20" />
+                </Grid>
+            </Grid>
+        </Border>
+
+
+    </Grid>
+</Window>

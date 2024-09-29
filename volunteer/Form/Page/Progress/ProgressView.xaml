@@ -1,0 +1,85 @@
+﻿<Window
+    x:Class="Form.Page.Progress.ProgressView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:Form.Page.Progress"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AddProjectView"
+    Width="600"
+    Height="250"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Closed="Window_Closed"
+    FontFamily="{StaticResource FontN}"
+    MouseLeftButtonDown="Window_MouseLeftButtonDown"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border Margin="10" Background="#fbfbfb">
+        <Border.Effect>
+            <DropShadowEffect
+                BlurRadius="16"
+                Direction="-2"
+                Opacity="0.5"
+                RenderingBias="Performance"
+                ShadowDepth="3"
+                Color="Gray" />
+        </Border.Effect>
+        <StackPanel>
+            <Border
+                Grid.Column="0"
+                Height="35"
+                BorderBrush="#353535"
+                BorderThickness="0,0,0,0.5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Name="txtTitle"
+                        Grid.Column="0"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Light"
+                        Foreground="Black"
+                        Text="Add a Project" />
+                    <!--<Button Grid.Column="1"  Style="{StaticResource ButtonIcon}" Foreground="White"  hc:IconElement.Geometry="{StaticResource WindowMinGeometry}" />-->
+                    <!--<Button Grid.Column="2"  Style="{StaticResource ButtonIcon}" Foreground="White"  hc:IconElement.Geometry="{StaticResource WindowMaxGeometry}" />-->
+                    <Button
+                        Grid.Column="3"
+                        hc:IconElement.Geometry="{StaticResource CloseGeometry}"
+                        Click="CloseClick"
+                        Foreground="Black"
+                        Style="{StaticResource ButtonIcon}" />
+                </Grid>
+            </Border>
+            <Grid Height="200" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ProgressBar
+                        Name="prg"
+                        Width="400"
+                        Maximum="100" />
+                    <ProgressBar
+                        Name="prg2"
+                        Width="400"
+                        Margin="0,10,0,0"
+                        IsIndeterminate="True"
+                        Visibility="Collapsed" />
+                    <TextBlock
+                        Name="txtCurrentProgress"
+                        Margin="0,10,0,0"
+                        Foreground="#4378ff"
+                        Text="0M/0M"
+                        TextAlignment="Right" />
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+    </Border>
+</Window>

@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2D1C1C9-FCE4-4155-8CC0-08DFB963B845}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>volunterSystem</RootNamespace>
+    <AssemblyName>volunterSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B77B4947BF07D8989103467A4965591495F9822E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>volunteerSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormAdmin\FormAddStu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormAddStu.Designer.cs">
+      <DependentUpon>FormAddStu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormAllStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormAllStudents.Designer.cs">
+      <DependentUpon>FormAllStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\FormEditOrganizerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\FormEditOrganizerInfo.Designer.cs">
+      <DependentUpon>FormEditOrganizerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\FormOrganizerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\FormOrganizerInfo.Designer.cs">
+      <DependentUpon>FormOrganizerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudent\FormMyActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudent\FormMyActivities.Designer.cs">
+      <DependentUpon>FormMyActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudent\FormEditStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudent\FormEditStudentInfo.Designer.cs">
+      <DependentUpon>FormEditStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dao.cs" />
+    <Compile Include="FormAdmin\FormStuDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormStuDetail.Designer.cs">
+      <DependentUpon>FormStuDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormSearchStu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormSearchStu.Designer.cs">
+      <DependentUpon>FormSearchStu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormOrgDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormOrgDetail.Designer.cs">
+      <DependentUpon>FormOrgDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormSearchOrg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormSearchOrg.Designer.cs">
+      <DependentUpon>FormSearchOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudent\FormStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudent\FormStudentInfo.Designer.cs">
+      <DependentUpon>FormStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudent\Topic3.cs" />
+    <Compile Include="LoginForm\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormAuditOrganizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormAuditOrganizer.Designer.cs">
+      <DependentUpon>FormAuditOrganizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\FormOrganizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\FormOrganizer.Designer.cs">
+      <DependentUpon>FormOrganizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormOrgAppDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormOrgAppDetail.Designer.cs">
+      <DependentUpon>FormOrgAppDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormOrgInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormOrgInfo.Designer.cs">
+      <DependentUpon>FormOrgInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm\FormOrgRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\FormOrgRegister.Designer.cs">
+      <DependentUpon>FormOrgRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudent\FormStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudent\FormStudent.Designer.cs">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\FormStuInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\FormStuInfo.Designer.cs">
+      <DependentUpon>FormStuInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm\FormStuRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\FormStuRegister.Designer.cs">
+      <DependentUpon>FormStuRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LoginForm\StudentFindCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\StudentFindCode.Designer.cs">
+      <DependentUpon>StudentFindCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm\StudentResetCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\StudentResetCode.Designer.cs">
+      <DependentUpon>StudentResetCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin\SearchAllStu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\SearchAllStu.Designer.cs">
+      <DependentUpon>SearchAllStu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Topic2.cs" />
+    <EmbeddedResource Include="FormAdmin\FormAddStu.resx">
+      <DependentUpon>FormAddStu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormSearchStu.resx">
+      <DependentUpon>FormSearchStu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormStuDetail.resx">
+      <DependentUpon>FormStuDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormOrgDetail.resx">
+      <DependentUpon>FormOrgDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormSearchOrg.resx">
+      <DependentUpon>FormSearchOrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormAllStudents.resx">
+      <DependentUpon>FormAllStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\FormEditOrganizerInfo.resx">
+      <DependentUpon>FormEditOrganizerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\FormOrganizerInfo.resx">
+      <DependentUpon>FormOrganizerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudent\FormEditStudentInfo.resx">
+      <DependentUpon>FormEditStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudent\FormMyActivities.resx">
+      <DependentUpon>FormMyActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudent\FormStudentInfo.resx">
+      <DependentUpon>FormStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormAuditOrganizer.resx">
+      <DependentUpon>FormAuditOrganizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\FormOrganizer.resx">
+      <DependentUpon>FormOrganizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormOrgAppDetail.resx">
+      <DependentUpon>FormOrgAppDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormOrgInfo.resx">
+      <DependentUpon>FormOrgInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\FormOrgRegister.resx">
+      <DependentUpon>FormOrgRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudent\FormStudent.resx">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\FormStuInfo.resx">
+      <DependentUpon>FormStuInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\FormStuRegister.resx">
+      <DependentUpon>FormStuRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="LoginForm\StudentFindCode.resx">
+      <DependentUpon>StudentFindCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\StudentResetCode.resx">
+      <DependentUpon>StudentResetCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\SearchAllStu.resx">
+      <DependentUpon>SearchAllStu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="volunteerSystem_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Activity\Activity\Activity.csproj">
+      <Project>{88602cea-01ce-429f-b86a-603468918ce5}</Project>
+      <Name>Activity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Config\Config.csproj">
+      <Project>{807fedf5-551c-4b9a-85a7-4572a312142f}</Project>
+      <Name>Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dao\Dao.csproj">
+      <Project>{d7c4a994-73dd-41eb-8aa0-432cdc058d7b}</Project>
+      <Name>Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Form\Form.csproj">
+      <Project>{db2032b1-cd23-43a6-92e9-59e00580d89c}</Project>
+      <Name>Form</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Forum\Forum.csproj">
+      <Project>{c159d418-f583-4bf4-92a8-d91f84d394b8}</Project>
+      <Name>Forum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Map\Map.csproj">
+      <Project>{89c19662-6843-4c3b-90fa-6b5c05087def}</Project>
+      <Name>Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{7cf1728c-f591-44d4-8b36-837eb2d51fba}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rank\Rank.csproj">
+      <Project>{db2f12b6-05f4-4388-87da-3932ab39aaa6}</Project>
+      <Name>Rank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsApp1\MessageBox.csproj">
+      <Project>{bfc8a858-cdae-415c-82d6-a0e6d133b7b5}</Project>
+      <Name>MessageBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1Children.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POPULATION.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88602CEA-01CE-429F-B86A-603468918CE5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Activity</RootNamespace>
+    <AssemblyName>Activity</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomBorderPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\ClosedStuDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\ClosedStuDetail.Designer.cs">
+      <DependentUpon>ClosedStuDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\ApplyAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\ApplyAudit.Designer.cs">
+      <DependentUpon>ApplyAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\AuditResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\AuditResult.Designer.cs">
+      <DependentUpon>AuditResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\adjustEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\adjustEvent.Designer.cs">
+      <DependentUpon>adjustEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\inProgressCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\inProgressCheck.Designer.cs">
+      <DependentUpon>inProgressCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\inProgressUserDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\inProgressUserDetail.Designer.cs">
+      <DependentUpon>inProgressUserDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PieChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PieChart.Designer.cs">
+      <DependentUpon>PieChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoundedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="volunteer_signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="volunteer_signup.Designer.cs">
+      <DependentUpon>volunteer_signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Topic.cs" />
+    <Compile Include="FormOrganizer\PostActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\PostActivity.Designer.cs">
+      <DependentUpon>PostActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivityDetails.Designer.cs">
+      <DependentUpon>ActivityDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganizer\OrgPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganizer\OrgPost.Designer.cs">
+      <DependentUpon>OrgPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormOrganizer\ClosedStuDetail.resx">
+      <DependentUpon>ClosedStuDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\ApplyAudit.resx">
+      <DependentUpon>ApplyAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\AuditResult.resx">
+      <DependentUpon>AuditResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\adjustEvent.resx">
+      <DependentUpon>adjustEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\PostActivity.resx">
+      <DependentUpon>PostActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivityDetails.resx">
+      <DependentUpon>ActivityDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\OrgPost.resx">
+      <DependentUpon>OrgPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\inProgressCheck.resx">
+      <DependentUpon>inProgressCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganizer\inProgressUserDetail.resx">
+      <DependentUpon>inProgressUserDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieChart.resx">
+      <DependentUpon>PieChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="volunteer_signup.resx">
+      <DependentUpon>volunteer_signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Config\Config.csproj">
+      <Project>{807fedf5-551c-4b9a-85a7-4572a312142f}</Project>
+      <Name>Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Map\Map.csproj">
+      <Project>{89c19662-6843-4c3b-90fa-6b5c05087def}</Project>
+      <Name>Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Model.csproj">
+      <Project>{7cf1728c-f591-44d4-8b36-837eb2d51fba}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WindowsFormsApp1\MessageBox.csproj">
+      <Project>{bfc8a858-cdae-415c-82d6-a0e6d133b7b5}</Project>
+      <Name>MessageBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1Children.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POPULATION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CulturalEducation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CIVIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CULTURALTOURISM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Children.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EDERLY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\INTERNET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEALTHCARE.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
